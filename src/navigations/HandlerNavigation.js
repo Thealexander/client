@@ -1,26 +1,12 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { AuthNavigation, AppNavigation } from "./stacks";
-
-/*
-function AppNavigation() {
-  return (
-    <View>
-      <Text> AppNavigation</Text>
-    </View>
-  );
-}
-function AuthNavigation() {
-  return (
-    <View>
-      <Text>AuthNavigation</Text>
-    </View>
-  );
-}
-*/
+import { useAuth } from "../hooks";
 
 export function HandlerNavigation() {
-  const user = null;
+  const { user } = useAuth();
+  //console.log(useAuth());
+  //const user = null;
 
   return user ? <AppNavigation /> : <AuthNavigation />;
 }
